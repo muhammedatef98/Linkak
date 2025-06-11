@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linkak - Your Professional Digital Identity Hub</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/enhancements.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/linkak_favicon.png') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="container">
+                <div class="logo">
+                    <a href="/">
+                        <img src="{{ url_for('static', filename='img/linkak_logo.png') }}" alt="Linkak Logo" height="40">
+                    </a>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </nav>
+                <div class="auth-buttons">
+                    <a href="/login" class="btn-secondary">Login</a>
+                    <a href="/register" class="btn-primary">Sign Up</a>
+                </div>
+            </div>
+        </header>
+        
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Your Professional Digital Identity Hub</h1>
+                    <p>Create a centralized hub for all your professional links with advanced customization, analytics, and monetization options.</p>
+                    <a href="#" class="btn-primary btn-large">Get Started</a>
+                </div>
+                <div class="hero-image">
+                    <div class="device-mockup">
+                        <div class="device-frame">
+                            <div class="device-content">
+                                <div class="preview-profile">
+                                    <div class="preview-header">
+                                        <div class="preview-avatar"></div>
+                                        <h3>Linkak Preview</h3>
+                                        <p>Professional Designer</p>
+                                    </div>
+                                    <div class="preview-links">
+                                        <div class="preview-link featured"></div>
+                                        <div class="preview-link"></div>
+                                        <div class="preview-link"></div>
+                                        <div class="preview-link"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="features" id="features">
+            <div class="container">
+                <h2 class="section-title">Why Choose Linkak?</h2>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3>Professional Branding</h3>
+                        <p>Custom domains, industry-specific templates, and resume integration for a professional online presence.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Enhanced Analytics</h3>
+                        <p>Detailed visitor demographics, heat maps, and conversion tracking to optimize your link performance.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h3>Advanced Customization</h3>
+                        <p>Full CSS control, interactive elements, and animation options to make your profile stand out.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <h3>Monetization Options</h3>
+                        <p>Built-in tipping system, product showcase, and affiliate link tracking to generate income.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>SEO & Discoverability</h3>
+                        <p>Built-in SEO tools and a public directory to help people find your profile.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Security & Privacy</h3>
+                        <p>Granular privacy controls, scheduled visibility, and password-protected sections.</p>
+                    </div>
+                    
+                    <div class="feature-card highlight-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-link"></i>
+                        </div>
+                        <h3>URL Shortening</h3>
+                        <p>Free custom domain URL shortening with analytics and QR code generation.</p>
+                        <span class="feature-badge">New</span>
+                    </div>
+                    
+                    <div class="feature-card highlight-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h3>Business Menu Builder</h3>
+                        <p>Create digital menus for restaurants and businesses with categories, items, and prices.</p>
+                        <span class="feature-badge">New</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="how-it-works">
+            <div class="container">
+                <h2 class="section-title">How It Works</h2>
+                
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Create Your Account</h3>
+                        <p>Sign up for Linkak in seconds and start building your professional hub.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Add Your Links</h3>
+                        <p>Add all your important links, customize their appearance, and organize them.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Customize Your Profile</h3>
+                        <p>Choose a theme, add your branding, and make it uniquely yours.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>Share With The World</h3>
+                        <p>Share your Linkak profile on social media, email signatures, and business cards.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="pricing" id="pricing">
+            <div class="container">
+                <h2 class="section-title">Choose Your Plan</h2>
+                
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Free</h3>
+                            <div class="price">$0<span>/month</span></div>
+                        </div>
+                        <div class="pricing-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Unlimited Links</li>
+                                <li><i class="fas fa-check"></i> Basic Analytics</li>
+                                <li><i class="fas fa-check"></i> Standard Themes</li>
+                                <li><i class="fas fa-check"></i> URL Shortening</li>
+                                <li><i class="fas fa-times"></i> Custom Domain</li>
+                                <li><i class="fas fa-times"></i> Advanced Analytics</li>
+                                <li><i class="fas fa-times"></i> Menu Builder</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="btn-secondary">Get Started</a>
+                    </div>
+                    
+                    <div class="pricing-card popular">
+                        <div class="pricing-badge">Most Popular</div>
+                        <div class="pricing-header">
+                            <h3>Pro</h3>
+                            <div class="price">$9<span>/month</span></div>
+                        </div>
+                        <div class="pricing-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Unlimited Links</li>
+                                <li><i class="fas fa-check"></i> Advanced Analytics</li>
+                                <li><i class="fas fa-check"></i> Premium Themes</li>
+                                <li><i class="fas fa-check"></i> URL Shortening</li>
+                                <li><i class="fas fa-check"></i> Custom Domain</li>
+                                <li><i class="fas fa-check"></i> Menu Builder</li>
+                                <li><i class="fas fa-check"></i> Priority Support</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="btn-primary">Get Started</a>
+                    </div>
+                    
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Business</h3>
+                            <div class="price">$29<span>/month</span></div>
+                        </div>
+                        <div class="pricing-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Everything in Pro</li>
+                                <li><i class="fas fa-check"></i> Team Collaboration</li>
+                                <li><i class="fas fa-check"></i> API Access</li>
+                                <li><i class="fas fa-check"></i> White Labeling</li>
+                                <li><i class="fas fa-check"></i> Multiple Profiles</li>
+                                <li><i class="fas fa-check"></i> AI Recommendations</li>
+                                <li><i class="fas fa-check"></i> Dedicated Support</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="btn-secondary">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="testimonials" id="testimonials">
+            <div class="container">
+                <h2 class="section-title">What Our Users Say</h2>
+                
+                <div class="testimonial-slider">
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>"Linkak has transformed how I present myself online. The professional templates and analytics have helped me optimize my online presence."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="{{ url_for('static', filename='img/testimonial-1.jpg') }}" alt="Testimonial Author">
+                            </div>
+                            <div class="author-info">
+                                <h4>Sarah Johnson</h4>
+                                <p>Marketing Consultant</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>"The business menu builder feature has been a game-changer for my restaurant. Our customers love being able to scan a QR code to see our menu."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="{{ url_for('static', filename='img/testimonial-1.jpg') }}" alt="Testimonial Author">
+                            </div>
+                            <div class="author-info">
+                                <h4>Michael Chen</h4>
+                                <p>Restaurant Owner</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>"As a freelancer, having all my portfolio links in one professional hub has increased my client conversions by 40%. The analytics are incredibly helpful."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="{{ url_for('static', filename='img/testimonial-1.jpg') }}" alt="Testimonial Author">
+                            </div>
+                            <div class="author-info">
+                                <h4>Emma Rodriguez</h4>
+                                <p>Freelance Designer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="faq" id="faq">
+            <div class="container">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>What makes Linkak different from other link-in-bio tools?</h3>
+                        <p>Linkak offers professional branding features, advanced analytics, custom domain URL shortening, and a business menu builder that other platforms don't provide. We focus on helping professionals and businesses enhance their online presence.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>Can I use my own domain with Linkak?</h3>
+                        <p>Yes! You can connect your own domain to your Linkak profile and use it for URL shortening with our Pro and Business plans.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>How does the business menu builder work?</h3>
+                        <p>Our menu builder allows you to create digital menus with categories, items, prices, and descriptions. You can add these menus to your Linkak profile or share them directly with a unique link or QR code.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>What analytics does Linkak provide?</h3>
+                        <p>Linkak provides detailed visitor demographics, geographic data, device information, click-through rates, conversion tracking, and heat maps to help you optimize your profile performance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="cta">
+            <div class="container">
+                <h2>Ready to elevate your online presence?</h2>
+                <p>Join thousands of professionals who use Linkak to enhance their online presence.</p>
+                <a href="#" class="btn-primary btn-large">Get Started Now</a>
+            </div>
+        </section>
+        
+        <footer>
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <h3>
+                            <img src="{{ url_for('static', filename='img/linkak_logo.png') }}" alt="Linkak Logo" height="30">
+                        </h3>
+                        <p>Your Professional Digital Identity Hub</p>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">API Documentation</a></li>
+                            <li><a href="#">Community</a></li>
+                            <li><a href="#">Tutorials</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 Linkak. All rights reserved.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+        <!-- Modal for Login -->
+        <div class="modal" id="login-modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Login to Linkak</h2>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="login-username">Username</label>
+                        <input type="text" id="login-username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Login</button>
+                </form>
+                <p class="form-footer">Don't have an account? <a href="#" id="switch-to-signup">Sign up</a></p>
+            </div>
+        </div>
+        
+        <!-- Modal for Sign Up -->
+        <div class="modal" id="signup-modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Create Your Linkak Account</h2>
+                <form id="signup-form">
+                    <div class="form-group">
+                        <label for="signup-username">Username</label>
+                        <input type="text" id="signup-username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-email">Email</label>
+                        <input type="email" id="signup-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password">Password</label>
+                        <input type="password" id="signup-password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-confirm-password">Confirm Password</label>
+                        <input type="password" id="signup-confirm-password" name="confirm_password" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Sign Up</button>
+                </form>
+                <p class="form-footer">Already have an account? <a href="#" id="switch-to-login">Login</a></p>
+            </div>
+        </div>
+        
+        <!-- Toast Notification Container -->
+        <div class="toast-container" id="toast-container"></div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

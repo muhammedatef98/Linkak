@@ -1,0 +1,454 @@
+/* Additional styles for Linkak logo and branding */
+
+/* Logo animation */
+.logo img {
+  transition: transform 0.3s ease;
+}
+
+.logo:hover img {
+  transform: scale(1.05);
+}
+
+/* Gradient text for emphasis */
+.gradient-text {
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Enhanced card hover effects */
+.feature-card:hover .feature-icon {
+  transform: scale(1.1) rotate(5deg);
+  transition: transform 0.3s ease;
+}
+
+/* Menu builder preview */
+.menu-preview {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  background-color: var(--background-white);
+}
+
+.menu-preview-header {
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.menu-preview-content {
+  padding: 1.5rem;
+}
+
+.menu-category {
+  margin-bottom: 2rem;
+}
+
+.menu-category-title {
+  border-bottom: 2px solid var(--primary-light);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed var(--border-color);
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-item-details h4 {
+  margin-bottom: 0.25rem;
+}
+
+.menu-item-details p {
+  color: var(--text-medium);
+  font-size: 0.875rem;
+  margin-bottom: 0;
+}
+
+.menu-item-price {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+/* URL shortener preview */
+.url-shortener {
+  background-color: var(--background-white);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+}
+
+.url-input {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.url-input input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+}
+
+.url-result {
+  background-color: var(--background-light);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.short-url {
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+.url-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.url-actions button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-white);
+  border: 1px solid var(--border-color);
+  color: var(--text-medium);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.url-actions button:hover {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+/* AI recommendations styling */
+.ai-recommendation {
+  background: linear-gradient(to right, rgba(99, 102, 241, 0.05), rgba(139, 92, 246, 0.05));
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid var(--primary-color);
+}
+
+.ai-recommendation-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.ai-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.ai-recommendation-content {
+  background-color: var(--background-white);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Analytics dashboard enhancements */
+.analytics-card {
+  background-color: var(--background-white);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1.5rem;
+}
+
+.analytics-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.analytics-filters {
+  display: flex;
+  gap: 1rem;
+}
+
+.filter-button {
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  background-color: var(--background-light);
+  border: 1px solid var(--border-color);
+  color: var(--text-medium);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filter-button.active {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.analytics-chart {
+  height: 300px;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.chart-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.analytics-metric {
+  background-color: var(--background-light);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  text-align: center;
+}
+
+.metric-value {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 0.25rem;
+}
+
+.metric-label {
+  font-size: 0.875rem;
+  color: var(--text-medium);
+}
+
+/* Scheduled content styling */
+.schedule-timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.schedule-timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--border-color);
+}
+
+.schedule-item {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.schedule-item::before {
+  content: '';
+  position: absolute;
+  left: -2rem;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  border: 3px solid var(--background-white);
+}
+
+.schedule-item.completed::before {
+  background-color: var(--success-color);
+}
+
+.schedule-item.pending::before {
+  background-color: var(--warning-color);
+}
+
+.schedule-content {
+  background-color: var(--background-white);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.schedule-time {
+  font-size: 0.875rem;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+}
+
+.schedule-title {
+  margin-bottom: 0.5rem;
+}
+
+.schedule-description {
+  font-size: 0.875rem;
+  color: var(--text-medium);
+  margin-bottom: 0;
+}
+
+/* Collaboration features styling */
+.collaborator {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--background-light);
+  border-radius: var(--radius-md);
+  margin-bottom: 1rem;
+}
+
+.collaborator-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: var(--primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+}
+
+.collaborator-info {
+  flex: 1;
+}
+
+.collaborator-info h4 {
+  margin-bottom: 0.25rem;
+}
+
+.collaborator-info p {
+  font-size: 0.875rem;
+  color: var(--text-medium);
+  margin-bottom: 0;
+}
+
+.collaborator-role {
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-xl);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.role-admin {
+  background-color: rgba(99, 102, 241, 0.1);
+  color: var(--primary-color);
+}
+
+.role-editor {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: var(--success-color);
+}
+
+.role-viewer {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: var(--warning-color);
+}
+
+/* Linkak specific animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(99, 102, 241, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0);
+  }
+}
+
+.pulse-animation {
+  animation: pulse 2s infinite;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-light: #1f2937;
+    --background-white: #111827;
+    --background-dark: #030712;
+    --text-dark: #f9fafb;
+    --text-medium: #d1d5db;
+    --text-light: #9ca3af;
+    --border-color: #374151;
+  }
+  
+  .btn-secondary {
+    background-color: rgba(99, 102, 241, 0.1);
+  }
+  
+  .feature-card,
+  .pricing-card,
+  .testimonial,
+  .step,
+  .dashboard-card,
+  .stat-card {
+    background-color: #1f2937;
+  }
+  
+  .auth-card,
+  .modal-content {
+    background-color: #1f2937;
+  }
+  
+  .form-group input {
+    background-color: #111827;
+    color: #f9fafb;
+  }
+  
+  .quick-action {
+    background-color: #111827;
+  }
+}
