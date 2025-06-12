@@ -4,6 +4,6 @@ flask-sqlalchemy==2.5.1
 werkzeug==2.0.1
 validators==0.18.2
 qrcode==7.3.1
-pillow==9.0.0
+pillow>=10.2.0
 gunicorn==20.1.0
 pymysql==1.0.2
