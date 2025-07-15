@@ -1,0 +1,129 @@
+version: '3.8'
+
+services:
+  # Main application
+  web:
+    build: .
+    container_name: linkak_web
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      - FLASK_ENV=production
+      - DATABASE_URL=postgresql://linkak_user:${DB_PASSWORD}@db:5432/linkak_db
+      - REDIS_URL=redis://redis:6379/0
+      - SECRET_KEY=${SECRET_KEY}
+      - SECURITY_SALT=${SECURITY_SALT}
+      - MAIL_SERVER=${MAIL_SERVER}
+      - MAIL_USERNAME=${MAIL_USERNAME}
+      - MAIL_PASSWORD=${MAIL_PASSWORD}
+    volumes:
+      - ./logs:/app/logs
+      - ./backups:/app/backups
+      - ./static/uploads:/app/static/uploads
+      - ./ssl:/app/ssl
+    depends_on:
+      - db
+      - redis
+    networks:
+      - linkak_network
+
+  # PostgreSQL Database
+  db:
+    image: postgres:15-alpine
+    container_name: linkak_db
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=linkak_db
+      - POSTGRES_USER=linkak_user
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_INITDB_ARGS=--encoding=UTF-8 --lc-collate=C --lc-ctype=C
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./backups:/backups
+    ports:
+      - "5432:5432"
+    networks:
+      - linkak_network
+
+  # Redis for caching and sessions
+  redis:
+    image: redis:7-alpine
+    container_name: linkak_redis
+    restart: unless-stopped
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD}
+    volumes:
+      - redis_data:/data
+    ports:
+      - "6379:6379"
+    networks:
+      - linkak_network
+
+  # Nginx Load Balancer (Optional for multi-instance)
+  nginx:
+    image: nginx:alpine
+    container_name: linkak_nginx
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    volumes:
+      - ./deploy/nginx-lb.conf:/etc/nginx/nginx.conf
+      - ./ssl:/etc/nginx/ssl
+    depends_on:
+      - web
+    networks:
+      - linkak_network
+
+  # Monitoring with Prometheus (Optional)
+  prometheus:
+    image: prom/prometheus
+    container_name: linkak_prometheus
+    restart: unless-stopped
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./deploy/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    networks:
+      - linkak_network
+
+  # Grafana for monitoring dashboards (Optional)
+  grafana:
+    image: grafana/grafana
+    container_name: linkak_grafana
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD}
+    volumes:
+      - grafana_data:/var/lib/grafana
+    networks:
+      - linkak_network
+
+  # Backup service
+  backup:
+    image: postgres:15-alpine
+    container_name: linkak_backup
+    restart: "no"
+    environment:
+      - PGPASSWORD=${DB_PASSWORD}
+    volumes:
+      - ./backups:/backups
+      - ./deploy/backup.sh:/backup.sh
+    command: /backup.sh
+    depends_on:
+      - db
+    networks:
+      - linkak_network
+
+volumes:
+  postgres_data:
+  redis_data:
+  prometheus_data:
+  grafana_data:
+
+networks:
+  linkak_network:
+    driver: bridge

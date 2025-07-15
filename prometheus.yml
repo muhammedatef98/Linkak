@@ -1,0 +1,58 @@
+# Prometheus Configuration for Linkak Monitoring
+
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+rule_files:
+  - "linkak_rules.yml"
+
+scrape_configs:
+  # Linkak Application Metrics
+  - job_name: 'linkak-app'
+    static_configs:
+      - targets: ['web:8000']
+    metrics_path: '/metrics'
+    scrape_interval: 15s
+    scrape_timeout: 10s
+
+  # PostgreSQL Metrics (using postgres_exporter)
+  - job_name: 'linkak-postgres'
+    static_configs:
+      - targets: ['postgres_exporter:9187']
+    scrape_interval: 30s
+
+  # Redis Metrics (using redis_exporter)
+  - job_name: 'linkak-redis'
+    static_configs:
+      - targets: ['redis_exporter:9121']
+    scrape_interval: 30s
+
+  # Nginx Metrics (using nginx-prometheus-exporter)
+  - job_name: 'linkak-nginx'
+    static_configs:
+      - targets: ['nginx_exporter:9113']
+    scrape_interval: 30s
+
+  # Node/System Metrics (using node_exporter)
+  - job_name: 'linkak-system'
+    static_configs:
+      - targets: ['node_exporter:9100']
+    scrape_interval: 30s
+
+  # Prometheus Self-Monitoring
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+          - alertmanager:9093
+
+# Storage retention
+storage:
+  tsdb:
+    retention.time: 30d
+    retention.size: 10GB
