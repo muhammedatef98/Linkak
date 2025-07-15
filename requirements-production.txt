@@ -1,0 +1,62 @@
+# Core Flask Dependencies
+flask==3.0.0
+flask-login==0.6.3
+flask-sqlalchemy==3.1.1
+werkzeug==3.0.1
+
+# Database
+psycopg2-binary==2.9.7
+pymysql==1.1.0
+sqlalchemy==2.0.23
+
+# Security
+flask-wtf==1.2.1
+flask-talisman==1.1.0
+flask-limiter==3.5.0
+flask-cors==4.0.0
+cryptography==41.0.7
+bcrypt==4.1.2
+
+# Performance & Caching
+redis==5.0.1
+flask-caching==2.1.0
+gunicorn==21.2.0
+gevent==23.9.1
+
+# Monitoring & Logging
+prometheus-flask-exporter==0.23.0
+flask-healthcheck==1.0.2
+sentry-sdk[flask]==1.38.0
+structlog==23.2.0
+
+# Email
+flask-mail==0.9.1
+
+# Image Processing
+pillow>=10.2.0
+qrcode==7.4.2
+
+# Utilities
+validators==0.22.0
+python-dotenv==1.0.0
+click==8.1.7
+python-dateutil==2.8.2
+
+# API Documentation
+flask-restx==1.3.0
+
+# Testing (for CI/CD)
+pytest==7.4.3
+pytest-flask==1.3.0
+pytest-cov==4.1.0
+
+# Development tools
+pre-commit==3.6.0
+black==23.11.0
+flake8==6.1.0
+
+# Backup utilities
+schedule==1.2.0
+
+# Additional security
+flask-seasurf==1.1.1
